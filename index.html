@@ -56,19 +56,78 @@
             </div>
             <div id="row2">
                 <div id="row2Text">Last Name:</div>
-                <div id="row2Input"><input class="input" id="lname" type="text"</div>
+                <div id="row2Input"><input class="input" id="lname" type="text"></div>
             </div>
-            <div id="row3">
-                <div id="row3Text">Subject:</div>
-                <div id="row3Input"><input class="input" id="messageSubject" type="text"></div>
+            <div id="nextDiv" style="margin-top: 10px;"><button id="next" class="btn btn-primary" style="width: 260px;" onclick="return next()">Next</button></div>
+            <div id="row3" style="visibility: hidden; position: fixed;">
+                <div id="row3Text">Form Preset:</div>
+                <div id="row3Input">
+                    <select class="input" id="messagePreset" onchange="presetForm();">
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                </div>
             </div>
-            <div id="row4">
-                <div id="row4Text">Body:</div>
-                <div id="row4Input"><textarea class="input" id="messageBody" style="height: 200px;"></textarea></div>
+            <div id="row4" style="visibility: hidden; position: fixed;">
+                <div id="row4Text">Subject:</div>
+                <div id="row4Input"><input class="input" id="messageSubject" type="text"></div>
             </div>
-            <div id="submitDiv"><button id="submit" class="btn btn-primary" style="width: 260px;" onclick="return sendEmail();">Submit</button></div>
+            <div id="row5" style="visibility: hidden; position: fixed;">
+                <div id="row5Text">Body:</div>
+                <div id="row5Input"><textarea class="input" id="messageBody" style="height: 200px;"></textarea></div>
+            </div>
+            <div id="submitDiv" style="margin-top: 10px; visibility: hidden"><button id="submit" class="btn btn-primary" style="width: 260px;" onclick="return sendEmail();">Submit</button></div>
         </div>
         <script>
+            function next(){
+                if(validateInput()){
+                    document.getElementById("row1").style.visibility = "hidden";
+                    document.getElementById("row2").style.visibility = "hidden";
+                    document.getElementById("nextDiv").style.visibility = "hidden";
+                    document.getElementById("row1").style.position = "fixed";
+                    document.getElementById("row2").style.position = "fixed";
+                    document.getElementById("nextDiv").style.position = "fixed";
+
+                    document.getElementById("row3").style.position = "relative";
+                    document.getElementById("row4").style.position = "relative";
+                    document.getElementById("row5").style.position = "relative";
+                    document.getElementById("submitDiv").style.position = "relative";
+                    document.getElementById("row3").style.visibility = "visible";
+                    document.getElementById("row4").style.visibility = "visible";
+                    document.getElementById("row5").style.visibility = "visible";
+                    document.getElementById("submitDiv").style.visibility = "visible";
+
+                    document.getElementById("messageSubject").value = "The Fences Under the Browne Street Viaduct";
+                    presetForm();
+                }
+            }
+            function presetForm(){
+                var choice = document.getElementById("messagePreset").value;
+
+                if(validateInput()){
+                    if(choice == 1){
+                        document.getElementById("messageBody").value = "Hello, my name is " + document.getElementById("fname").value + " " + document.getElementById("lname").value + " and I am emailing you from here in Spokane to demand the removal of the fencing installed in the Browne Street viaduct. The narrow walkways created by this fencing skirt the bare minimum of ADA accessibility, intentionally making movement more difficult for those using any kind of transportation assistance by removing available and viable space. The city has said the fencing will limit the area needing garbage management, but the impacts are negative on the safety and accessibility of our community in favor of aesthetics. I urge you to take action and get this obstruction removed as quickly as possible. Thank you for your time.";
+                    }
+                    if(choice == 2){
+                        document.getElementById("messageBody").value = "Hello, my name is " + document.getElementById("fname").value + " " + document.getElementById("lname").value + " and I am emailing you from here in Spokane to demand removal of the fencing installed in the Browne Street viaduct. The narrow walkways created by this fencing are part of an ongoing campaign by the city to push unsheltered people out of eyesight. Displacement and inhuman treatment actively keep our neighbors from exiting houselessness. The city has said the fencing will limit areas needing garbage management, but instead it further limits options for shelter from the elements in favor of aesthetics. It is the city’s responsibility and highest priority to look into proven housing first models and provide long term solutions that take into account the struggle and trauma incurred from living outside. You are urged to take action and get this obstruction removed as quickly as possible. Thank you for your time.";
+                    }
+                    if(choice == 3){
+                        document.getElementById("messageBody").value = "Hello, my name is " + document.getElementById("fname").value + " " + document.getElementById("lname").value + " and I am emailing you from here in Spokane to demand the removal of the fencing installed in the Browne Street viaduct. Not only do the narrow walkways make accessibility difficult for those using any kind of transportation assistance by barely meeting ADA standards, they are also part of an ongoing campaign by the city to “remove'' unsheltered people from the premises by taking away any available space. The city has said the fencing will limit the area needing garbage management, but the decision to install such a hazard has sacrificed the safety, accessibility, and survival of our entire community in favor of aesthetics. I urge you to take action and get this obstruction removed as quickly as possible. Thank you for your time.";
+                    }
+                }
+            }
+            function validateInput(){
+                if(!document.getElementById("fname").value.match(/(\w|\-)+/)){
+                    alert("Please input a valid first name.");
+                    return false;
+                }
+                if(!document.getElementById("lname").value.match(/(\w|\-)+/)){
+                    alert("Please input a valid last name.");
+                    return false;
+                }
+                return true;
+            }
             function sendEmail(){
                 var subject = document.getElementById("messageSubject").value;
                 var body = document.getElementById("messageBody").value;
