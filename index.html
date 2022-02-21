@@ -77,12 +77,11 @@
                 <div id="row5Text">Body:</div>
                 <div id="row5Input"><textarea class="input" id="messageBody" style="height: 200px;"></textarea></div>
             </div>
-            <div id="submitDiv" style="margin-top: 10px; visibility: hidden"><button id="submit" class="btn btn-primary" style="width: 260px;" onclick="return sendEmail();">Submit</button></div>
+            <div id="submitDiv" style="margin-top: 10px; visibility: hidden"><button id="submit" class="btn btn-primary" style="width: 260px;" onclick="presetForm(); sendEmail();">Submit</button></div>
         </div>
         <script>
             function next(){
                 if(validateInput()){
-
                     document.getElementById("nextDiv").style.visibility = "hidden";
                     document.getElementById("nextDiv").style.position = "fixed";
 
