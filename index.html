@@ -72,17 +72,17 @@
                 align-items: center;
                 flex-direction: row;
                 margin-top: 5px;
-                margin-left: 15%;
+                margin-left: 5px;
                 margin-bottom: 5px;
             }
 
             #buttons button{
-                margin-top: 5px;
+                margin-top: 10px;
                 margin-left: 5px;
                 margin-right: 5px;
             }
             #finalButtons button{
-                margin-top: 5px;
+                margin-top: 10px;
                 margin-left: 5px;
                 margin-right: 5px;
             }
@@ -171,13 +171,13 @@
         </div>
         <div id="content">
             <div id="landing" class="tab">
-                <div id="landingPicture" style="float: left;">
-                    <img src="pics\bridge.png" style="height: 500px; width: auto; box-shadow: 10px 5px 5px #88888888;">
+                <div id="landingImage">
+                    <img src="pics\bridge.png" style="width: 350px; height: auto; margin-left: 20px; margin-right: 20px; margin-bottom: 20px; box-shadow: 10px 5px 5px #88888888">
                 </div>
-                <div id="landingText" style="margin-right: 20px; margin-left: 20px; width: 40%;">
+                <div id="landingText" style="width: 75%;">
                     <h1>Fuck This Fence</h1>
                     <p>The following form is used to streamline the process of letting our elected officials know that we find the construction of this fence in the Browne Street Bridge viaduct abhorent and inhumane to our housless and disabled neighbors.</p>
-                    <button id="next" class="btn btn-primary" onclick="next();">Next</button>
+                    <button id="next" class="btn btn-primary" onclick="next();" style="width: 80px; height: auto;">Next</button>
                 </div>
 
                 <div style="margin-top: 10px; width: 100%; display: flex; justify-content: center; align-items: center;"><span id="title">Who will this message reach?</span></div>
@@ -323,17 +323,17 @@
                 </div>
                 <div>
                     <div>Body:</div>
-                    <textarea id="body" class="input" style="height: 200px;"></textarea>
+                    <textarea id="body" class="input" style="height: 300px;"></textarea>
                 </div>
             </div>
 
             <div id="buttons" style="display: none;">
-                <button id="prev" class="btn btn-primary" onclick="prev();">Back</button>
-                <button id="next" class="btn btn-primary" onclick="next();">Next</button>
+                <button id="prev" class="btn btn-primary" onclick="prev();" style="width: 80px; height: auto;">Back</button>
+                <button id="next" class="btn btn-primary" onclick="next();" style="width: 80px; height: auto;">Next</button>
             </div>
             <div id="finalButtons" style="display: none;">
-                <button id="prevFinal" class="btn btn-primary" onclick="prev();">Back</button>
-                <button id="nextFinal" class="btn btn-primary" onclick="sendEmail();">Submit</button>
+                <button id="prevFinal" class="btn btn-primary" onclick="prev();" style="width: 80px; height: auto;">Back</button>
+                <button id="nextFinal" class="btn btn-primary" onclick="sendEmail();" style="width: 80px; height: auto;">Submit</button>
             </div>
         </div>
     </body>
