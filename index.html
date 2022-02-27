@@ -4,12 +4,22 @@
         <title>Fuck This Fence</title>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
         <style>
             #header{
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
                 align-items: center;
+                position: -webkit-sticky;
+                position: sticky;
+                top: 0;
+                background-color: white;
+
+                font-family: 'Bebas Neue', cursive;
+                font-size: 32px;
 
                 width: 100%;
                 height: 20%;
@@ -57,8 +67,9 @@
             }
 
             #title{
-                font-weight: bold;
-                font-size: 24px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
                 margin-top: 10px;
                 margin-bottom: 20px;
                 border-bottom: 2px solid rgba(0, 0, 0, .5);
@@ -76,6 +87,8 @@
                 margin-bottom: 5px;
             }
             .recipient-text{
+                display: flex;
+                flex-direction: column;
                 font-size: 14px;
             }
 
@@ -88,6 +101,23 @@
                 margin-top: 10px;
                 margin-left: 5px;
                 margin-right: 5px;
+            }
+
+            .heading{
+                font-family: 'Bebas Neue', cursive;
+                font-size: 28px;
+            }
+
+            a:link {
+                color: #f45703;
+                background-color: transparent;
+                text-decoration: none;
+            }
+
+            a:visited {
+                color: #f45703;
+                background-color: transparent;
+                text-decoration: none;
             }
         </style>
         <script>
@@ -171,6 +201,10 @@
             <div id="headerImage">
                 <img src="pics\logo.jpg" style="width: 100px; height: 100px">
             </div>
+            <div style="margin-left: 10px; line-height: 36px; display: flex; flex-wrap: wrap; flex-direction: column; justify-content: center;">
+                <span>Mutual Aid</span>
+                <span style="color: #f45703">Survival Squad</span>
+            </div>
         </div>
         <div id="content">
             <div id="landing" class="tab">
@@ -178,12 +212,12 @@
                     <img src="pics\bridge.png" style="width: 350px; height: auto; margin-left: 20px; margin-right: 20px; margin-bottom: 20px; box-shadow: 10px 5px 5px #88888888">
                 </div>
                 <div id="landingText" style="width: 75%;">
-                    <h1>Fuck This Fence</h1>
-                    <p>The following form is used to streamline the process of letting our elected officials know that we find the construction of this fence in the Browne Street Bridge viaduct abhorent and inhumane to our housless and disabled neighbors.</p>
-                    <button id="next" class="btn btn-primary" onclick="next();" style="width: 80px; height: auto;">Next</button>
+                    <span class="heading">Fuck This Fence</span>
+                    <p>The following form is used to streamline the process of letting our elected officials know that we find the construction of this fence in the Browne Street Bridge viaduct abhorent and inhumane to our houseless and disabled neighbors.</p>
+                    <button id="next" class="btn btn-primary" onclick="next();" style="width: 80px; height: auto; background-color: #f45703; border-color: #f45703;">Next</button>
                 </div>
 
-                <div style="margin-top: 10px; width: 100%; display: flex; justify-content: center; align-items: center;"><span id="title">Who will this message reach?</span></div>
+                <div style="margin-top: 10px; width: 100%; display: flex; justify-content: center; align-items: center;"><span id="title" class="heading">Who will this message reach?</span></div>
 
                 <div id="explaination">
                     <div class="recipient">
@@ -191,9 +225,9 @@
                             <img src="pics\woodward.jpg" style="height: 192px; width: auto;">
                         </div>
                         <div class="recipient-text" style="margin-left: 10px;">
-                            <h3>Nadine Woodward</h3>
-                            <h6><em>Mayor</em></h6>
-                            <strong>Email:</strong> mayor@spokanecity.org
+                            <span class="heading">Nadine Woodward</span>
+                            <span class="heading" style="font-size: 18px;"><em>Mayor</em></span>
+                            <a href="mailto:mayor@spokanecity.org">mayor@spokanecity.org</a>
                         </div>
                     </div>
                     <div class="recipient">
@@ -201,9 +235,9 @@
                             <img src="pics\beggs.jpg" style="height: 192px; width: auto;">
                         </div>
                         <div class="recipient-text" style="margin-left: 10px;">
-                            <h3>Breean Beggs</h3>
-                            <h6><em>City Council President</em></h6>
-                            <strong>Email:</strong> bbeggs@spokanecity.org
+                            <span class="heading">Breean Beggs</span>
+                            <span class="heading" style="font-size: 18px;"><em>City Council President</em></span>
+                            <a href="mailto:bbeggs@spokanecity.org">bbeggs@spokanecity.org</a>
                         </div>
                     </div>
                     <div class="recipient">
@@ -211,9 +245,9 @@
                             <img src="pics\bingle.jpg" style="height: 192px; width: auto;">
                         </div>
                         <div class="recipient-text" style="margin-left: 10px;">
-                            <h3>Jonathan Bingle</h3>
-                            <h6><em>City Council, District One</em></h6>
-                            <strong>Email:</strong> jbingle@spokanecity.org
+                            <span class="heading">Jonathan Bingle</span>
+                            <span class="heading" style="font-size: 18px;"><em>City Council, District One</em></span>
+                            <a href="mailto:jbingle@spokanecity.org">jbingle@spokanecity.org</a>
                         </div>
                     </div>
                     <div class="recipient">
@@ -221,9 +255,9 @@
                             <img src="pics\cathcart.jpg" style="height: 192px; width: auto;">
                         </div>
                         <div class="recipient-text" style="margin-left: 10px;">
-                            <h3>Michael Cathcart</h3>
-                            <h6><em>City Council, District One</em></h6>
-                            <strong>Email:</strong> mcathcart@spokanecity.org
+                            <span class="heading">Michael Cathcart</span>
+                            <span class="heading" style="font-size: 18px;"><em>City Council, District One</em></span>
+                            <a href="mailto:mcathcart@spokanecity.org">mcathcart@spokanecity.org</a>
                         </div>
                     </div>
                     <div class="recipient">
@@ -231,9 +265,9 @@
                             <img src="pics\wilkerson.jpg" style="height: 192px; width: auto;">
                         </div>
                         <div class="recipient-text" style="margin-left: 10px;">
-                            <h3>Betsy Wilkerson</h3>
-                            <h6><em>City Council, District Two</em></h6>
-                            <strong>Email:</strong> bwilkerson@spokanecity.org
+                            <span class="heading">Betsy Wilkerson</span>
+                            <span class="heading" style="font-size: 18px;"><em>City Council, District Two</em></span>
+                            <a href="mailto:bwilkerson@spokanecity.org">bwilkerson@spokanecity.org</a>
                         </div>
                     </div>
                     <div class="recipient">
@@ -241,9 +275,9 @@
                             <img src="pics\kinnear.jpg" style="height: 192px; width: auto;">
                         </div>
                         <div class="recipient-text" style="margin-left: 10px;">
-                            <h3>Lori Kinnear</h3>
-                            <h6><em>City Council, District Two</em></h6>
-                            <strong>Email:</strong> lkinnear@spokanecity.org
+                            <span class="heading">Lori Kinnear</span>
+                            <span class="heading" style="font-size: 18px;"><em>City Council, District Two</em></span>
+                            <a href="mailto:lkinnear@spokanecity.org">lkinnear@spokanecity.org</a>
                         </div>
                     </div>
                     <div class="recipient">
@@ -251,9 +285,9 @@
                             <img src="pics\zappone.jpg" style="height: 192px; width: auto;">
                         </div>
                         <div class="recipient-text" style="margin-left: 10px;">
-                            <h3>Zach Zappone</h3>
-                            <h6><em>City Council, District Three</em></h6>
-                            <strong>Email:</strong> zzappone@spokanecity.org
+                            <span class="heading">Zach Zappone</span>
+                            <span class="heading" style="font-size: 18px;"><em>City Council, District Three</em></span>
+                            <a href="mailto:zzappone@spokanecity.org">zzappone@spokanecity.org</a>
                         </div>
                     </div>
                     <div class="recipient">
@@ -261,9 +295,9 @@
                             <img src="pics\stratton.jpg" style="height: 192px; width: auto;">
                         </div>
                         <div class="recipient-text" style="margin-left: 10px;">
-                            <h3>Karen Stratton</h3>
-                            <h6><em>City Council, District Three</em></h6>
-                            <strong>Email:</strong> kstratton@spokanecity.org
+                            <span class="heading">Karen Stratton</span>
+                            <span class="heading" style="font-size: 18px;"><em>City Council, District Three</em></span>
+                            <a href="mailto:kstratton@spokanecity.org">kstratton@spokanecity.org</a>
                         </div>
                     </div>
                     <div class="recipient">
@@ -271,9 +305,9 @@
                             <img src="pics\mcclatchey.jpg" style="height: 192px; width: auto;">
                         </div>
                         <div class="recipient-text" style="margin-left: 10px;">
-                            <h3>Brian McClatchey</h3>
-                            <h6><em>Council Staff, Director of Policy and Government Relations</em></h6>
-                            <strong>Email:</strong> bmcclatchey@spokanecity.org
+                            <span class="heading">Brian McClatchey</span>
+                            <span class="heading" style="font-size: 18px;"><em>Council Staff, Director of Policy and Government Relations</em></span>
+                            <a href="mailto:bmcclatchey@spokanecity.org">bmcclatchey@spokanecity.org</a>
                         </div>
                     </div>
                     <div class="recipient">
@@ -281,9 +315,9 @@
                             <img src="pics\dunivant.jpg" style="height: 192px; width: auto;">
                         </div>
                         <div class="recipient-text" style="margin-left: 10px;">
-                            <h3>Timothy Dunivant</h3>
-                            <h6><em>Council Staff, City Council Budget Officer</em></h6>
-                            <strong>Email:</strong> tdunivant@spokanecity.org
+                            <span class="heading">Timothy Dunivant</span>
+                            <span class="heading" style="font-size: 18px;"><em>Council Staff, City Council Budget Officer</em></span>
+                            <a href="mailto:tdunivant@spokanecity.org">tdunivant@spokanecity.org</a>
                         </div>
                     </div>
                     <div class="recipient">
@@ -291,16 +325,16 @@
                             <img src="pics\coddington.jpg" style="height: 192px; width: auto;">
                         </div>
                         <div class="recipient-text" style="margin-left: 10px;">
-                            <h3>Brian Coddington</h3>
-                            <h6><em>Council Staff, Communications & Marketing Director</em></h6>
-                            <strong>Email:</strong> bcoddington@spokanecity.org
+                            <span class="heading">Brian Coddington</span>
+                            <span class="heading" style="font-size: 18px;"><em>Council Staff, Communications & Marketing Director</em></span>
+                            <a href="mailto:bcoddington@spokanecity.org">bcoddington@spokanecity.org</a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div id="personalInformation" class="tab" style="display: none;">
-                <div id="title">Personal Information</div>
+                <div id="title" class="heading">Personal Information</div>
                 <div>
                     <div>First Name:</div>
                     <input type="text" class="input" id="fname">
@@ -309,11 +343,14 @@
                     <div>Last Name:</div>
                     <input type="text" class="input" id="lname">
                 </div>
+                <div>
+                    <div style="font-size: 10; color: rgba(0,0,0,0.4);">This information will not be saved.</div>
+                </div>
             </div>
 
             <div id="email" class="tab" style="display: none;">
+                <div id="title" class="heading">Email Submission Form</div>
                 <div>
-                    <div id="title">Email Submission Form</div>
                     <div>Preset:</div>
                     <select id="preset" class="input" onchange="presetForm();">
                         <option value="1">ADA-Focused</option>
@@ -332,12 +369,12 @@
             </div>
 
             <div id="buttons" style="display: none;">
-                <button id="prev" class="btn btn-primary" onclick="prev();" style="width: 80px; height: auto;">Back</button>
-                <button id="next" class="btn btn-primary" onclick="next();" style="width: 80px; height: auto;">Next</button>
+                <button id="prev" class="btn btn-primary" onclick="prev();" style="width: 80px; height: auto; background-color: #f45703; border-color: #f45703;">Back</button>
+                <button id="next" class="btn btn-primary" onclick="next();" style="width: 80px; height: auto; background-color: #f45703; border-color: #f45703;">Next</button>
             </div>
             <div id="finalButtons" style="display: none;">
-                <button id="prevFinal" class="btn btn-primary" onclick="prev();" style="width: 80px; height: auto;">Back</button>
-                <button id="nextFinal" class="btn btn-primary" onclick="sendEmail();" style="width: 80px; height: auto;">Submit</button>
+                <button id="prevFinal" class="btn btn-primary" onclick="prev();" style="width: 80px; height: auto; background-color: #f45703; border-color: #f45703;">Back</button>
+                <button id="nextFinal" class="btn btn-primary" onclick="sendEmail();" style="width: 80px; height: auto; background-color: #f45703; border-color: #f45703;">Submit</button>
             </div>
         </div>
     </body>
